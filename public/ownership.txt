@@ -1,0 +1,11 @@
+Site Ownership Verification
+Owner: KERROUMI  fatima zohra
+Domain/Project: 3D Portfolio Site
+Verification Token: 7f5e2a42-7b1a-4a9d-9f7a-3b9f1e8f6a1c
+Issued: 2025-10-12
+
+Statement: I, KERROUMI  fatima zohra, assert ownership and control over this website and its content. This file is intentionally published at the site root to serve as a public proof of control.
+
+How to verify:
+- Access https://your-domain.example/ownership.txt and confirm the presence of this exact token and name.
+- Cross-verify via DNS TXT or social profile posts referencing the same token (optional).
