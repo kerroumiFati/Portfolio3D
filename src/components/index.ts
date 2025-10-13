@@ -9,6 +9,7 @@ import Hero from "./sections/Hero";
 import Navbar from "./layout/Navbar";
 import About from "./sections/About";
 import Tech from "./sections/Tech";
+import Resume from "./sections/Resume";
 import Experience from "./sections/Experience";
 import Works from "./sections/Works";
 import Feedbacks from "./sections/Feedbacks";
@@ -20,6 +21,7 @@ export {
   Navbar,
   About,
   Tech,
+  Resume,
   Experience,
   Works,
   Feedbacks,
