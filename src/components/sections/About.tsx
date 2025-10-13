@@ -7,6 +7,7 @@ import { SectionWrapper } from "../../hoc";
 import { fadeIn } from "../../utils/motion";
 import { config } from "../../constants/config";
 import { Header } from "../atoms/Header";
+import { useLang } from "../../context/lang";
 
 interface IServiceCard {
   index: number;
@@ -44,27 +45,36 @@ const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => (
 );
 
 const About = () => {
+  const { lang } = useLang();
+  const serviceTitleFr: Record<string, string> = {
+    "Web Developer": "Développeuse Web",
+    "React Native Developer": "Développeuse React Native",
+    "Backend Developer": "Développeuse Backend",
+    "Content Creator": "Créatrice de contenu",
+  };
+  const aboutTexts =
+    lang === "fr" && config.translations?.fr
+      ? config.translations.fr.sections.about
+      : config.sections.about;
   return (
     <>
-      <Header
-        useMotion={true}
-        {...(document.documentElement.lang === "fr" && config.translations?.fr
-          ? config.translations.fr.sections.about
-          : config.sections.about)}
-      />
+      <Header useMotion={true} {...aboutTexts} />
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
         className="text-secondary mt-4 max-w-3xl text-[17px] leading-[30px]"
       >
-        {document.documentElement.lang === "fr" && config.translations?.fr
-          ? config.translations.fr.sections.about.content
-          : config.sections.about.content}
+        {aboutTexts.content}
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10 max-sm:justify-center">
         {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
+          <ServiceCard
+            key={service.title}
+            index={index}
+            {...service}
+            title={lang === "fr" ? serviceTitleFr[service.title] || service.title : service.title}
+          />
         ))}
       </div>
     </>

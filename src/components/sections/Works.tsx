@@ -18,7 +18,7 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
   sourceCodeLink,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <div>
       <Tilt
         glareEnable
         tiltEnable
@@ -59,7 +59,7 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
           </div>
         </div>
       </Tilt>
-    </motion.div>
+    </div>
   );
 };
 
@@ -93,4 +93,4 @@ const Works = () => {
   );
 };
 
-export default SectionWrapper(Works, "");
+export default SectionWrapper(Works, "work");

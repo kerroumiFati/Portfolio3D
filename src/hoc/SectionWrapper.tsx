@@ -14,6 +14,7 @@ const SectionWrapper = (
   function HOC() {
     return (
       <motion.section
+        variants={{ hidden: {}, show: {} }}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.25 }}

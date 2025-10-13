@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../../hoc";
 import { fadeIn } from "../../utils/motion";
@@ -112,10 +111,7 @@ const Resume = () => {
             Download PDF (EN)
           </a>
         </div>
-        {(() => {
-          const { lang } = useLang();
-          return <ResumeCompact lang={lang} />;
-        })()}
+        <ResumeCompact lang={lang} />
 
       </motion.div>
     </>

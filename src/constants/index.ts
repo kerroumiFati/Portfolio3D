@@ -127,7 +127,7 @@ const technologies: TTechnology[] = [
   },
 ];
 
-const experiences: TExperience[] = [
+export const experiencesEn: TExperience[] = [
   {
     title: "React.js Developer",
     companyName: "Starbucks",
@@ -178,6 +178,61 @@ const experiences: TExperience[] = [
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
+    ],
+  },
+];
+
+export const experiencesFr: TExperience[] = [
+  {
+    title: "Développeur React.js",
+    companyName: "Starbucks",
+    icon: starbucks,
+    iconBg: "#383E56",
+    date: "Mars 2020 - Avril 2021",
+    points: [
+      "Développer et maintenir des applications web en utilisant React.js et d'autres technologies associées.",
+      "Collaborer avec des équipes pluridisciplinaires (designers, Product Managers, développeurs) pour créer des produits de haute qualité.",
+      "Mettre en œuvre des designs responsives et assurer la compatibilité inter-navigateurs.",
+      "Participer aux revues de code et fournir des retours constructifs aux autres développeurs.",
+    ],
+  },
+  {
+    title: "Développeur React Native",
+    companyName: "Tesla",
+    icon: tesla,
+    iconBg: "#E6DEDD",
+    date: "Jan 2021 - Fév 2022",
+    points: [
+      "Développer et maintenir des applications web en utilisant React.js et d'autres technologies associées.",
+      "Collaborer avec des équipes pluridisciplinaires (designers, Product Managers, développeurs) pour créer des produits de haute qualité.",
+      "Mettre en œuvre des designs responsives et assurer la compatibilité inter-navigateurs.",
+      "Participer aux revues de code et fournir des retours constructifs aux autres développeurs.",
+    ],
+  },
+  {
+    title: "Développeur Web",
+    companyName: "Shopify",
+    icon: shopify,
+    iconBg: "#383E56",
+    date: "Jan 2022 - Jan 2023",
+    points: [
+      "Développer et maintenir des applications web en utilisant React.js et d'autres technologies associées.",
+      "Collaborer avec des équipes pluridisciplinaires (designers, Product Managers, développeurs) pour créer des produits de haute qualité.",
+      "Mettre en œuvre des designs responsives et assurer la compatibilité inter-navigateurs.",
+      "Participer aux revues de code et fournir des retours constructifs aux autres développeurs.",
+    ],
+  },
+  {
+    title: "Développeur Full Stack",
+    companyName: "Meta",
+    icon: meta,
+    iconBg: "#E6DEDD",
+    date: "Jan 2023 - Présent",
+    points: [
+      "Développer et maintenir des applications web en utilisant React.js et d'autres technologies associées.",
+      "Collaborer avec des équipes pluridisciplinaires (designers, Product Managers, développeurs) pour créer des produits de haute qualité.",
+      "Mettre en œuvre des designs responsives et assurer la compatibilité inter-navigateurs.",
+      "Participer aux revues de code et fournir des retours constructifs aux autres développeurs.",
     ],
   },
 ];
@@ -275,4 +330,4 @@ const projects: TProject[] = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, testimonials, projects };
