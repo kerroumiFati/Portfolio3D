@@ -5,10 +5,11 @@ import { styles } from "../../constants/styles";
 import { navLinks } from "../../constants";
 import { logo, menu, close } from "../../assets";
 import { config } from "../../constants/config";
+import { useLang } from "../../context/lang";
 
 const Navbar = () => {
   const [active, setActive] = useState<string | null>();
-  const [toggle, setToggle] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -48,6 +49,8 @@ const Navbar = () => {
     };
   }, []);
 
+  const { lang, toggle: toggleLang } = useLang();
+
   return (
     <nav
       className={`${
@@ -70,7 +73,9 @@ const Navbar = () => {
           </p>
         </Link>
 
-        <ul className="hidden list-none flex-row gap-10 sm:flex">
+        <div className="hidden items-center gap-6 sm:flex">
+          <ul className="list-none flex-row gap-10 sm:flex">
+
           {navLinks.map((nav) => (
             <li
               key={nav.id}
@@ -81,30 +86,53 @@ const Navbar = () => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
-        </ul>
+          </ul>
+
+          <button
+            onClick={toggleLang}
+            className="rounded-md border border-white/20 px-3 py-1 text-sm text-white hover:bg-white/10"
+            aria-label={lang === "fr" ? "Basculer en anglais" : "Switch to French"}
+          >
+            {lang === "fr" ? "FR / EN" : "EN / FR"}
+          </button>
+        </div>
 
         <div className="flex flex-1 items-center justify-end sm:hidden">
           <img
-            src={toggle ? close : menu}
+            src={menuOpen ? close : menu}
             alt="menu"
             className="h-[28px] w-[28px] object-contain"
-            onClick={() => setToggle(!toggle)}
+            onClick={() => setMenuOpen(!menuOpen)}
           />
 
           <div
             className={`${
-              !toggle ? "hidden" : "flex"
+              !menuOpen ? "hidden" : "flex"
             } black-gradient absolute right-0 top-20 z-10 mx-4 my-2 min-w-[140px] rounded-xl p-6`}
           >
-            <ul className="flex flex-1 list-none flex-col items-start justify-end gap-4">
+           <ul className="flex flex-1 list-none flex-col items-start justify-end gap-4">
+             <li className="w-full">
+               <button
+                 onClick={() => {
+                   toggleLang();
+                   setMenuOpen(false);
+                 }}
+                 className="w-full rounded-md border border-white/20 px-3 py-2 text-left text-white hover:bg-white/10"
+               >
+                 {lang === "fr" ? "FR / EN" : "EN / FR"}
+               </button>
+             </li>
               {navLinks.map((nav) => (
+              // Translate only the title via config.translations
+              // You can later localize navLinks structure if needed
+              
                 <li
                   key={nav.id}
                   className={`font-poppins cursor-pointer text-[16px] font-medium ${
                     active === nav.id ? "text-white" : "text-secondary"
                   }`}
                   onClick={() => {
-                    setToggle(!toggle);
+                    setMenuOpen(!menuOpen);
                   }}
                 >
                   <a href={`#${nav.id}`}>{nav.title}</a>

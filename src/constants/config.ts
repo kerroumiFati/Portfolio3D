@@ -14,31 +14,93 @@ type TConfig = {
     name: string;
     p: string[];
   };
-  contact: {
-    form: {
-      name: {
-        span: string;
-        placeholder: string;
+  contact: (
+    {
+      form: {
+        name: {
+          span: string;
+          placeholder: string;
+        };
+        email: {
+          span: string;
+          placeholder: string;
+        };
+        message: {
+          span: string;
+          placeholder: string;
+        };
       };
-      email: {
-        span: string;
-        placeholder: string;
-      };
-      message: {
-        span: string;
-        placeholder: string;
-      };
-    };
-  } & TSection;
+    } & TSection
+  );
   sections: {
     about: Required<TSection>;
     experience: TSection;
     feedbacks: TSection;
     works: Required<TSection>;
   };
+  translations?: {
+    fr: {
+      hero: { p: string[] };
+      sections: {
+        about: Required<TSection>;
+        experience: TSection;
+        works: Required<TSection>;
+        contact: TSection & {
+          form: {
+            name: { span: string; placeholder: string };
+            email: { span: string; placeholder: string };
+            message: { span: string; placeholder: string };
+          };
+        };
+      };
+    };
+  };
 };
 
 export const config: TConfig = {
+  translations: {
+    fr: {
+      hero: {
+        p: [
+          "Je conçois des visuels 3D, des interfaces",
+          "utilisateur et des applications web",
+        ],
+      },
+      sections: {
+        about: {
+          p: "Introduction",
+          h2: "Aperçu.",
+          content:
+            "Développeuse Full Stack avec expérience en TypeScript/JavaScript et expertise React, Node.js et Three.js. J'apprends vite et collabore avec les clients pour créer des solutions efficaces et ergonomiques.",
+        },
+        experience: {
+          p: "Ce que j'ai fait jusqu'à présent",
+          h2: "Expérience professionnelle.",
+        },
+        works: {
+          p: "Mes projets",
+          h2: "Projets.",
+          content:
+            "Sélection de projets illustrant mes compétences. Chaque carte inclut une description, des technologies et des liens.",
+        },
+        contact: {
+          p: "Me contacter",
+          h2: "Contact.",
+          form: {
+            name: { span: "Votre nom", placeholder: "Quel est votre nom ?" },
+            email: {
+              span: "Votre email",
+              placeholder: "Quel est votre email ?",
+            },
+            message: {
+              span: "Votre message",
+              placeholder: "Que souhaitez-vous dire ?",
+            },
+          },
+        },
+      },
+    },
+  },
   html: {
     title: "KERROUMI  fatima zohra — 3D Portfolio",
     fullName: "KERROUMI  fatima zohra",

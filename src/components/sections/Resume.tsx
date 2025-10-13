@@ -4,6 +4,7 @@ import { SectionWrapper } from "../../hoc";
 import { fadeIn } from "../../utils/motion";
 import { Header } from "../atoms/Header";
 import { resume } from "../../constants/cv";
+import { useLang } from "../../context/lang";
 
 type Lang = "fr" | "en";
 const ResumeCompact = ({ lang = "fr" }: { lang?: Lang }) => {
@@ -88,9 +89,10 @@ const ResumeCompact = ({ lang = "fr" }: { lang?: Lang }) => {
 };
 
 const Resume = () => {
+  const { lang } = useLang();
   return (
     <>
-      <Header useMotion={true} p="Résumé" h2="CV." />
+      <Header useMotion={true} p={lang === "fr" ? "Résumé" : "Resume"} h2={lang === "fr" ? "CV." : "Resume."} />
       <motion.div variants={fadeIn("", "", 0.1, 1)}>
         <div className="mb-6 flex gap-3">
           <a
@@ -110,7 +112,11 @@ const Resume = () => {
             Download PDF (EN)
           </a>
         </div>
-        <ResumeCompact lang="fr" />
+        {(() => {
+          const { lang } = useLang();
+          return <ResumeCompact lang={lang} />;
+        })()}
+
       </motion.div>
     </>
   );

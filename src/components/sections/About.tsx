@@ -46,13 +46,20 @@ const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => (
 const About = () => {
   return (
     <>
-      <Header useMotion={true} {...config.sections.about} />
+      <Header
+        useMotion={true}
+        {...(document.documentElement.lang === "fr" && config.translations?.fr
+          ? config.translations.fr.sections.about
+          : config.sections.about)}
+      />
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
         className="text-secondary mt-4 max-w-3xl text-[17px] leading-[30px]"
       >
-        {config.sections.about.content}
+        {document.documentElement.lang === "fr" && config.translations?.fr
+          ? config.translations.fr.sections.about.content
+          : config.sections.about.content}
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10 max-sm:justify-center">

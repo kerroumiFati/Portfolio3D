@@ -64,9 +64,16 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
 };
 
 const Works = () => {
+  // Duplicate project cards (each project appears twice)
+  const duplicated: TProject[] = [...projects, ...projects];
   return (
     <>
-      <Header useMotion={true} {...config.sections.works} />
+      <Header
+        useMotion={true}
+        {...(document.documentElement.lang === "fr" && config.translations?.fr
+          ? config.translations.fr.sections.works
+          : config.sections.works)}
+      />
 
       <div className="flex w-full">
         <motion.p
@@ -78,7 +85,7 @@ const Works = () => {
       </div>
 
       <div className="mt-20 flex flex-wrap gap-7">
-        {projects.map((project, index) => (
+        {duplicated.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>

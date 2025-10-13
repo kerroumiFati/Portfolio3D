@@ -59,7 +59,12 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
 const Experience = () => {
   return (
     <>
-      <Header useMotion={true} {...config.sections.experience} />
+      <Header
+        useMotion={true}
+        {...(document.documentElement.lang === "fr" && config.translations?.fr
+          ? config.translations.fr.sections.experience
+          : config.sections.experience)}
+      />
 
       <div className="mt-20 flex flex-col">
         <VerticalTimeline>

@@ -20,8 +20,13 @@ const Hero = () => {
             Hi, I'm <span className="text-[#915EFF]">{config.hero.name}</span>
           </h1>
           <p className={`${styles.heroSubText} text-white-100 mt-2`}>
-            {config.hero.p[0]} <br className="hidden sm:block" />
-            {config.hero.p[1]}
+            {(config.translations?.fr && document.documentElement.lang === "fr"
+              ? config.translations.fr.hero.p[0]
+              : config.hero.p[0])}
+            <br className="hidden sm:block" />
+            {(config.translations?.fr && document.documentElement.lang === "fr"
+              ? config.translations.fr.hero.p[1]
+              : config.hero.p[1])}
           </p>
         </div>
       </div>
