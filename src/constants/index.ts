@@ -132,7 +132,7 @@ export const experiencesEn: TExperience[] = [
     title: "React.js Developer",
     companyName: "Starbucks",
     icon: starbucks,
-    iconBg: "#383E56",
+    iconBg: "#26474E",
     date: "March 2020 - April 2021",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
@@ -145,7 +145,7 @@ export const experiencesEn: TExperience[] = [
     title: "React Native Developer",
     companyName: "Tesla",
     icon: tesla,
-    iconBg: "#E6DEDD",
+    iconBg: "#77021D",
     date: "Jan 2021 - Feb 2022",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
@@ -158,7 +158,7 @@ export const experiencesEn: TExperience[] = [
     title: "Web Developer",
     companyName: "Shopify",
     icon: shopify,
-    iconBg: "#383E56",
+    iconBg: "#26474E",
     date: "Jan 2022 - Jan 2023",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
@@ -171,7 +171,7 @@ export const experiencesEn: TExperience[] = [
     title: "Full stack Developer",
     companyName: "Meta",
     icon: meta,
-    iconBg: "#E6DEDD",
+    iconBg: "#77021D",
     date: "Jan 2023 - Present",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
@@ -187,7 +187,7 @@ export const experiencesFr: TExperience[] = [
     title: "Développeur React.js",
     companyName: "Starbucks",
     icon: starbucks,
-    iconBg: "#383E56",
+    iconBg: "#26474E",
     date: "Mars 2020 - Avril 2021",
     points: [
       "Développer et maintenir des applications web en utilisant React.js et d'autres technologies associées.",
@@ -200,7 +200,7 @@ export const experiencesFr: TExperience[] = [
     title: "Développeur React Native",
     companyName: "Tesla",
     icon: tesla,
-    iconBg: "#E6DEDD",
+    iconBg: "#77021D",
     date: "Jan 2021 - Fév 2022",
     points: [
       "Développer et maintenir des applications web en utilisant React.js et d'autres technologies associées.",
@@ -213,7 +213,7 @@ export const experiencesFr: TExperience[] = [
     title: "Développeur Web",
     companyName: "Shopify",
     icon: shopify,
-    iconBg: "#383E56",
+    iconBg: "#26474E",
     date: "Jan 2022 - Jan 2023",
     points: [
       "Développer et maintenir des applications web en utilisant React.js et d'autres technologies associées.",
@@ -226,7 +226,7 @@ export const experiencesFr: TExperience[] = [
     title: "Développeur Full Stack",
     companyName: "Meta",
     icon: meta,
-    iconBg: "#E6DEDD",
+    iconBg: "#77021D",
     date: "Jan 2023 - Présent",
     points: [
       "Développer et maintenir des applications web en utilisant React.js et d'autres technologies associées.",

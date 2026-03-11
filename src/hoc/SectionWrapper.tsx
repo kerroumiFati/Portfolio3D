@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
-
+import React from "react";
 import { styles } from "../constants/styles";
+import { useScrollReveal } from "../utils/gsapHelpers";
 
 interface Props {
   Component: React.ElementType;
@@ -12,19 +12,17 @@ const SectionWrapper = (
   idName: Props["idName"]
 ) =>
   function HOC() {
+    const ref = useScrollReveal({ fromY: 20, once: true, start: "top 80%" });
+
     return (
-      <motion.section
-        variants={{ hidden: {}, show: {} }}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
-        className={`${styles.padding} relative z-0 mx-auto max-w-7xl`}
+      <section
+        ref={ref as any}
+        className={`${styles.padding} relative z-0 mx-auto max-w-7xl opacity-0`}
         id={idName}
       >
         <span className="hash-span">&nbsp;</span>
-
         <Component />
-      </motion.section>
+      </section>
     );
   };
 

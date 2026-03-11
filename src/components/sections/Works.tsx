@@ -1,10 +1,10 @@
 import Tilt from "react-parallax-tilt";
-import { motion } from "framer-motion";
+import React, { useEffect } from "react";
 
 import { github } from "../../assets";
 import { SectionWrapper } from "../../hoc";
 import { projects } from "../../constants";
-import { fadeIn } from "../../utils/motion";
+import { useScrollReveal, initDraggableRow } from "../../utils/gsapHelpers";
 import { config } from "../../constants/config";
 import { Header } from "../atoms/Header";
 import { TProject } from "../../types";
@@ -24,7 +24,7 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
         tiltEnable
         tiltMaxAngleX={30}
         tiltMaxAngleY={30}
-        glareColor="#aaa6c3"
+        glareColor="#c94d4d"
       >
         <div className="bg-tertiary w-full rounded-2xl p-5 sm:w-[300px]">
           <div className="relative h-[230px] w-full">
@@ -64,6 +64,15 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
 };
 
 const Works = () => {
+  useEffect(() => {
+    // Initialize draggable projects row
+    const drag = initDraggableRow('.projects-viewport', '.projects-track');
+    const auto = import('../../utils/gsapHelpers').then(m => m.initAutoScrollRow('.projects-viewport', '.projects-track', 40));
+    return () => {
+      try { (drag as any)?.kill?.(); } catch {}
+      auto.then((tl) => { try { (tl as any)?.kill?.(); } catch {}});
+    };
+  }, []);
   // Duplicate project cards (each project appears twice)
   const duplicated: TProject[] = [...projects, ...projects];
   return (
@@ -76,18 +85,30 @@ const Works = () => {
       />
 
       <div className="flex w-full">
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className="text-secondary mt-3 max-w-3xl text-[17px] leading-[30px]"
+        <p
+          className="text-secondary mt-3 max-w-3xl text-[17px] leading-[30px] opacity-0"
+          ref={useScrollReveal({ fromY: 20, duration: 0.8, once: true, start: "top 90%" }) as any}
         >
           {config.sections.works.content}
-        </motion.p>
+        </p>
       </div>
 
-      <div className="mt-20 flex flex-wrap gap-7">
-        {duplicated.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
-        ))}
+      <div className="mt-20">
+        <div className="relative">
+          <button aria-label="Scroll left" className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/10 px-3 py-2 text-white hover:bg-white/20" onClick={() => import('../../utils/gsapHelpers').then(m => m.scrollRowBy('.projects-track',  -300))}>
+            ‹
+          </button>
+          <button aria-label="Scroll right" className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/10 px-3 py-2 text-white hover:bg-white/20" onClick={() => import('../../utils/gsapHelpers').then(m => m.scrollRowBy('.projects-track', 300))}>
+            ›
+          </button>
+          <div className="projects-viewport overflow-hidden px-10">
+            <div className="projects-track flex gap-7 will-change-transform">
+              {duplicated.map((project, index) => (
+                <ProjectCard key={`project-${index}`} index={index} {...project} />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

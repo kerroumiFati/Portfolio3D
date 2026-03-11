@@ -17,10 +17,10 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "#1d1836",
+        background: "#26474E",
         color: "#fff",
       }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+      contentArrowStyle={{ borderRight: "7px solid  #18534F" }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
       icon={

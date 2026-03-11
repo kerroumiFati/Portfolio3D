@@ -1,23 +1,56 @@
-import { motion } from "framer-motion";
-
+import React, { useEffect } from "react";
 import { styles } from "../../constants/styles";
 import { ComputersCanvas } from "../canvas";
 import { config } from "../../constants/config";
+import { useLoopYoyo, initScrollWormTimeline, initPinnedWindmillTimeline, initDataSpeedParallax, initLettersReveal, initTypePhrases } from "../../utils/gsapHelpers";
 
 const Hero = () => {
+  const dotRef = useLoopYoyo(24, 1.5);
+
+  useEffect(() => {
+    const tl1 = initScrollWormTimeline();
+    const tl2 = initPinnedWindmillTimeline();
+    const cleanupParallax = initDataSpeedParallax();
+    const tlName = initLettersReveal('#hero-name', { stagger: 0.035, fromY: 40, duration: 1.05 });
+
+    const phrases = [
+      'Full‑stack developer',
+      'ERP',
+      'Logiciels',
+      'Sites web',
+      'Portfolio',
+    ];
+    const phrasesFr = [
+      'Développeur Full‑stack',
+      'ERP',
+      'Logiciels',
+      'Sites web',
+      'Portfolio',
+    ];
+    const currentPhrases = document.documentElement.lang === 'fr' ? phrasesFr : phrases;
+    const tlRoles = initTypePhrases('#hero-roles', currentPhrases, { interval: 2.0, typeSpeed: 0.6 });
+
+    return () => {
+      try { tl1?.kill?.(); } catch {}
+      try { tl2?.kill?.(); } catch {}
+      try { cleanupParallax?.(); } catch {}
+      try { tlName?.kill?.(); } catch {}
+    };
+  }, []);
+
   return (
     <section className={`relative mx-auto h-screen w-full`}>
       <div
         className={`absolute inset-0 top-[120px] mx-auto max-w-7xl ${styles.paddingX} flex flex-row items-start gap-5`}
       >
-        <div className="mt-5 flex flex-col items-center justify-center">
-          <div className="h-5 w-5 rounded-full bg-[#915EFF]" />
-          <div className="violet-gradient h-40 w-1 sm:h-80" />
+        <div className="scroll-trigger-ready__worm-wrap mt-5 flex flex-col items-center justify-center">
+          <div className="h-5 w-5 rounded-full bg-[#c94d4d] shadow-[0_0_20px_rgba(201,77,77,0.6)] animate-pulse" />
+          <div className="violet-gradient h-40 w-1 sm:h-80" data-speed="1.2" />
         </div>
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915EFF]">{config.hero.name}</span>
+            Hi, I'm <span id="hero-name" className="text-[#c94d4d] drop-shadow-[0_0_15px_rgba(201,77,77,0.5)]">{config.hero.name}</span>
           </h1>
           <p className={`${styles.heroSubText} text-white-100 mt-2`}>
             {(config.translations?.fr && document.documentElement.lang === "fr"
@@ -28,6 +61,9 @@ const Hero = () => {
               ? config.translations.fr.hero.p[1]
               : config.hero.p[1])}
           </p>
+          <p className={`${styles.heroSubText} text-white-100 mt-1`}>
+            <span id="hero-roles" className="text-[#c94d4d] drop-shadow-[0_0_15px_rgba(201,77,77,0.5)]"></span>
+          </p>
         </div>
       </div>
 
@@ -36,17 +72,7 @@ const Hero = () => {
       <div className="xs:bottom-10 absolute bottom-32 flex w-full items-center justify-center">
         <a href="#about">
           <div className="border-secondary flex h-[64px] w-[35px] items-start justify-center rounded-3xl border-4 p-2">
-            <motion.div
-              animate={{
-                y: [0, 24, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className="bg-secondary mb-1 h-3 w-3 rounded-full"
-            />
+            <div ref={dotRef as any} className="bg-secondary mb-1 h-3 w-3 rounded-full" />
           </div>
         </a>
       </div>
