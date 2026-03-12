@@ -22,7 +22,7 @@ const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => {
       tiltEnable
       tiltMaxAngleX={30}
       tiltMaxAngleY={30}
-      glareColor="#c94d4d"
+      glareColor="#FF1493"
     >
       <div className="max-w-[250px] w-full xs:w-[250px]">
         <div

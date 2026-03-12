@@ -93,8 +93,8 @@ const CustomCursor: React.FC = () => {
         >
           <path
             d="M8 14V7C8 5.89543 8.89543 5 10 5C11.1046 5 12 5.89543 12 7V14M12 14V6C12 4.89543 12.8954 4 14 4C15.1046 4 16 4.89543 16 6V14M16 14V7C16 5.89543 16.8954 5 18 5C19.1046 5 20 5.89543 20 7V14M20 14V9C20 7.89543 20.8954 7 22 7C23.1046 7 24 7.89543 24 9V18C24 23.5228 19.5228 28 14 28C8.47715 28 4 23.5228 4 18V14C4 12.8954 4.89543 12 6 12C7.10457 12 8 12.8954 8 14Z"
-            fill={isClicking ? "#c94d4d" : isHovering ? "#d98585" : "#c9716d"}
-            stroke={isHovering ? "#c94d4d" : "#77021D"}
+            fill={isClicking ? "#C71585" : isHovering ? "#FF1493" : "#C71585"}
+            stroke={isHovering ? "#FF1493" : "#C71585"}
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"

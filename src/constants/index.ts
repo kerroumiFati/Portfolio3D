@@ -381,7 +381,7 @@ const projectsFr: TProject[] = [
   {
     name: "Site vitrine",
     description:
-      "Développement d'un logiciel de pesage et de gestion de laboratoire pour poulets et légumes, incluant la gestion des stocks et le suivi des livraisons.",
+      "Site vitrine responsive à design épuré, scroll fluide, avec sections distinctes pour accueil accrocheur, services détaillés, réalisations et contact direct.",
     tags: [
       { name: "react", color: "blue-text-gradient" },
       { name: "restapi", color: "green-text-gradient" },
