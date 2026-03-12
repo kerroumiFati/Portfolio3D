@@ -29,8 +29,10 @@ import {
   tesla,
   shopify,
   carrent,
-  jobit,
-  tripguide,
+  FoodLab,
+  Vitrine,
+  LGDistr,
+  ERPNext,
   threejs,
 } from "../assets";
 
@@ -55,19 +57,19 @@ export const navLinks: TNavLink[] = [
 
 const services: TService[] = [
   {
-    title: "Web Developer",
+    title: "ERP",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "Mobile",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "Logiciel",
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "Web",
     icon: creator,
   },
 ];
@@ -266,9 +268,9 @@ const testimonials: TTestimonial[] = [
 
 const projects: TProject[] = [
   {
-    name: "Car Rent",
+    name: "Inventory & Distribution ",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Software for managing stock, distribution, users, barcode scanning, sales, purchases, orders, GPS tracking, notifications, invoicing, and delivery tracking.",
     tags: [
       {
         name: "react",
@@ -283,13 +285,13 @@ const projects: TProject[] = [
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
+    image: LGDistr,
     sourceCodeLink: "https://github.com/",
   },
   {
-    name: "Job IT",
+    name: "Food Lab",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Development of a weighing and laboratory management software for chicken and vegetables, including stock management and delivery tracking",
     tags: [
       {
         name: "react",
@@ -304,30 +306,102 @@ const projects: TProject[] = [
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
+    image: FoodLab,
     sourceCodeLink: "https://github.com/",
   },
-  {
-    name: "Trip Guide",
+   {
+    name: "Showcase Website",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Responsive one-page website with a clean design, smooth scrolling, and distinct sections for a captivating homepage, detailed services, portfolio, and direct contact",
     tags: [
       {
-        name: "nextjs",
+        name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "restapi",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "scss",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
+    image: Vitrine,
+    sourceCodeLink: "https://github.com/",
+  },
+  {
+    name: "ERP ",
+    description:
+      "ERPNext (open-source) module implementation and customization, including Purchasing, Sales, HR,Logistics, and Hospitality,to support business operations.",
+    tags: [
+      {
+        name: "Frappe ",
+        color: "blue-text-gradient",
+      },{
+        name: "Boostrap",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "MariaDB",
+        color: "green-text-gradient",
+      },
+      
+    ],
+    image: ERPNext,
     sourceCodeLink: "https://github.com/",
   },
 ];
 
-export { services, technologies, testimonials, projects };
+const projectsFr: TProject[] = [
+  {
+    name: "Inventaire & Distribution",
+    description:
+      "Logiciel de gestion de stock, distribution, utilisateurs, scan de codes-barres, ventes, achats, commandes, suivi GPS, notifications, facturation et suivi des livraisons.",
+    tags: [
+      { name: "react", color: "blue-text-gradient" },
+      { name: "mongodb", color: "green-text-gradient" },
+      { name: "tailwind", color: "pink-text-gradient" },
+    ],
+    image: LGDistr,
+    sourceCodeLink: "https://github.com/",
+  },
+  {
+    name: "Food Lab",
+    description:
+      "Développement d'un logiciel de pesage et de gestion de laboratoire pour poulets et légumes, incluant la gestion des stocks et le suivi des livraisons.",
+    tags: [
+      { name: "react", color: "blue-text-gradient" },
+      { name: "restapi", color: "green-text-gradient" },
+      { name: "scss", color: "pink-text-gradient" },
+    ],
+    image: FoodLab,
+    sourceCodeLink: "https://github.com/",
+  },
+  {
+    name: "Site vitrine",
+    description:
+      "Développement d'un logiciel de pesage et de gestion de laboratoire pour poulets et légumes, incluant la gestion des stocks et le suivi des livraisons.",
+    tags: [
+      { name: "react", color: "blue-text-gradient" },
+      { name: "restapi", color: "green-text-gradient" },
+      { name: "scss", color: "pink-text-gradient" },
+    ],
+    image: Vitrine,
+    sourceCodeLink: "https://github.com/",
+  },
+  {
+    name: "ERP",
+    description:
+      "Implémentation et personnalisation de modules ERPNext (open-source) : Achats, Ventes, RH, Logistique et Hôtellerie, pour soutenir les opérations métier.",
+    tags: [
+      { name: "Frappe", color: "blue-text-gradient" },
+      { name: "Bootstrap", color: "pink-text-gradient" },
+      { name: "MariaDB", color: "green-text-gradient" },
+    ],
+    image: ERPNext,
+    sourceCodeLink: "https://github.com/",
+  },
+];
+
+export { services, technologies, testimonials, projects, projectsFr };

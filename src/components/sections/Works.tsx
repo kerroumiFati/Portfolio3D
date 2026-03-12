@@ -3,10 +3,11 @@ import React, { useEffect } from "react";
 
 import { github } from "../../assets";
 import { SectionWrapper } from "../../hoc";
-import { projects } from "../../constants";
+import { projects, projectsFr } from "../../constants";
 import { useScrollReveal, initDraggableRow } from "../../utils/gsapHelpers";
 import { config } from "../../constants/config";
 import { Header } from "../atoms/Header";
+import { useLang } from "../../context/lang";
 import { TProject } from "../../types";
 
 const ProjectCard: React.FC<{ index: number } & TProject> = ({
@@ -47,7 +48,7 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
             </div>
           </div>
           <div className="mt-5">
-            <h3 className="text-[24px] font-bold text-white">{name}</h3>
+            <h3 className="text-[18px] font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis">{name}</h3>
             <p className="text-secondary mt-2 text-[14px]">{description}</p>
           </div>
           <div className="mt-4 flex flex-wrap gap-2">
@@ -64,6 +65,7 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
 };
 
 const Works = () => {
+  const { lang } = useLang();
   useEffect(() => {
     // Initialize draggable projects row
     const drag = initDraggableRow('.projects-viewport', '.projects-track');
@@ -74,12 +76,13 @@ const Works = () => {
     };
   }, []);
   // Duplicate project cards (each project appears twice)
-  const duplicated: TProject[] = [...projects, ...projects];
+  const activeProjects = lang === "fr" ? projectsFr : projects;
+  const duplicated: TProject[] = [...activeProjects, ...activeProjects];
   return (
     <>
       <Header
         useMotion={true}
-        {...(document.documentElement.lang === "fr" && config.translations?.fr
+        {...(lang === "fr" && config.translations?.fr
           ? config.translations.fr.sections.works
           : config.sections.works)}
       />

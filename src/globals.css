@@ -30,7 +30,7 @@
 }
 
 body {
-  background: linear-gradient(135deg, #0f1a1c 0%, #1a2d31 50%, #26474E 100%);
+  background: #000000;
   background-attachment: fixed;
   position: relative;
   overflow-x: hidden;

@@ -50,10 +50,10 @@ const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => {
 const About = () => {
   const { lang } = useLang();
   const serviceTitleFr: Record<string, string> = {
-    "Web Developer": "Développeuse Web",
-    "React Native Developer": "Développeuse React Native",
-    "Backend Developer": "Développeuse Backend",
-    "Content Creator": "Créatrice de contenu",
+    "Web Developer": " ERP",
+    "React Native Developer": " Mobile",
+    "Backend Developer": " Logiciel",
+    "Content Creator": "Web",
   };
   const aboutTexts =
     lang === "fr" && config.translations?.fr

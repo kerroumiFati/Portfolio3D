@@ -62,7 +62,7 @@ export const config: TConfig = {
     fr: {
       hero: {
         p: [
-          "Je conçois des visuels 3D, des interfaces",
+          "Je conçois des Logiciels, des interfaces",
           "utilisateur et des applications web",
         ],
       },
@@ -71,7 +71,7 @@ export const config: TConfig = {
           p: "Introduction",
           h2: "Aperçu.",
           content:
-            "Développeuse Full Stack avec expérience en TypeScript/JavaScript et expertise React, Node.js et Three.js. J'apprends vite et collabore avec les clients pour créer des solutions efficaces et ergonomiques.",
+            "Développeuse Full Stack avec expérience en TypeScript/JavaScript et expertise React, Next.js,Node.js et Express.js.Je collabore avec les clients pour créer des solutions efficaces et ergonomiques.",
         },
         experience: {
           p: "Ce que j'ai fait jusqu'à présent",
@@ -102,13 +102,13 @@ export const config: TConfig = {
     },
   },
   html: {
-    title: "KERROUMI  fatima zohra — 3D Portfolio",
+    title: "KERROUMI  fatima zohra ",
     fullName: "KERROUMI  fatima zohra",
-    email: "johndoe@mail.com",
+    email: "KerroumiZahra.fatima@mail.com",
   },
   hero: {
     name: "KERROUMI  fatima zohra",
-    p: ["I develop 3D visuals, user", "interfaces and web applications"],
+    p: ["I develop , user", "interfaces and web applications"],
   },
   contact: {
     p: "Get in touch",

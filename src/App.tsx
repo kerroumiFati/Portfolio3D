@@ -1,4 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
+import serviceHover from "./assets/service-hover.jpg";
 import CustomCursor from "./components/layout/CustomCursor";
 import BackToTop from "./components/layout/BackToTop";
 
@@ -43,7 +44,20 @@ const App = () => {
             <Resume />
             <Experience />
             <Tech />
-            <Works />
+            <div
+              className="relative"
+              style={{
+                backgroundImage: `url(${serviceHover})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundAttachment: "fixed",
+              }}
+            >
+              <div className="absolute inset-0 bg-black/70" />
+              <div className="relative z-10">
+                <Works />
+              </div>
+            </div>
             <Feedbacks />
             <div className="relative z-0">
               <Contact />
