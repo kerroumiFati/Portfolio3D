@@ -28,7 +28,6 @@ import {
   starbucks,
   tesla,
   shopify,
-  carrent,
   FoodLab,
   Vitrine,
   LGDistr,

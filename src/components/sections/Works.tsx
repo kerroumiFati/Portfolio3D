@@ -11,7 +11,7 @@ import { useLang } from "../../context/lang";
 import { TProject } from "../../types";
 
 const ProjectCard: React.FC<{ index: number } & TProject> = ({
-  index,
+  index: _index,
   name,
   description,
   tags,

@@ -26,7 +26,7 @@ export const setupGsapBaseline = () => {
   const mm = gsap.matchMedia();
   mm.add("(prefers-reduced-motion: reduce)", () => {
     // Disable ScrollTrigger animations by default
-    ScrollTrigger.getAll().forEach((st) => st.disable(false));
+    ScrollTrigger.getAll().forEach((st: any) => st.disable(false));
   });
 };
 
@@ -192,8 +192,8 @@ export const initScrollSmoother = async (
 // Positive values move opposite to scroll at varying intensities; tweak baseDistance for scale
 export const initDataSpeedParallax = (selector = "[data-speed]", baseDistance = 100) => {
   const tweens: gsap.core.Tween[] = [];
-  const elements = gsap.utils.toArray<HTMLElement>(selector);
-  elements.forEach((el) => {
+  const elements = gsap.utils.toArray(selector) as HTMLElement[];
+  elements.forEach((el: HTMLElement) => {
     const speedRaw = el.getAttribute("data-speed") || "1";
     const speed = parseFloat(speedRaw);
     if (!isFinite(speed)) return;

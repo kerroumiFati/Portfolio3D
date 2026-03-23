@@ -8,7 +8,7 @@ interface IHeader {
   h2: string;
 }
 
-export const Header: React.FC<IHeader> = ({ useMotion, p, h2 }) => {
+export const Header: React.FC<IHeader> = ({ p, h2 }) => {
   const containerRef = useScrollReveal({ fromY: 30, duration: 1, once: true, start: "top 85%" });
 
   return (

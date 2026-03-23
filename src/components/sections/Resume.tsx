@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { SectionWrapper } from "../../hoc";
 import { Header } from "../atoms/Header";
 import { resume } from "../../constants/cv";
 import { useLang } from "../../context/lang";
-import { useScrollReveal, initLettersRevealOnViewAll, initStaggerChildrenOnView, initLettersReveal } from "../../utils/gsapHelpers";
+import { useScrollReveal, initStaggerChildrenOnView } from "../../utils/gsapHelpers";
 
 type Lang = "fr" | "en";
 const ResumeCompact = ({ lang = "fr" }: { lang?: Lang }) => {

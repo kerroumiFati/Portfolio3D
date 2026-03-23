@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { styles } from "../../constants/styles";
 import { config } from "../../constants/config";
 import avatarPC from "../../assets/avatarPC.png";
-import telechargerGif from "../../assets/télécharger.gif";
-import { useLoopYoyo, initScrollWormTimeline, initPinnedWindmillTimeline, initDataSpeedParallax, initLettersReveal, initTypePhrases } from "../../utils/gsapHelpers";
+import { useLoopYoyo, initScrollWormTimeline, initPinnedWindmillTimeline, initDataSpeedParallax, initTypePhrases } from "../../utils/gsapHelpers";
 
 const Hero = () => {
   const dotRef = useLoopYoyo(24, 1.5);
@@ -12,7 +11,7 @@ const Hero = () => {
     const tl1 = initScrollWormTimeline();
     const tl2 = initPinnedWindmillTimeline();
     const cleanupParallax = initDataSpeedParallax();
-    const tlName = null; // gradient incompatible with letter-split animation
+    // tlName skipped: gradient incompatible with letter-split animation
 
     const phrases = [
       'Full‑stack developer',
@@ -35,7 +34,7 @@ const Hero = () => {
       try { tl1?.kill?.(); } catch {}
       try { tl2?.kill?.(); } catch {}
       try { cleanupParallax?.(); } catch {}
-      try { tlName?.kill?.(); } catch {}
+      try { (tlRoles as any)?.kill?.(); } catch {}
     };
   }, []);
 
