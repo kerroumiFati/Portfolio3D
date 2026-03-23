@@ -65,7 +65,6 @@ const ResumeCompact = ({ lang = "fr" }: { lang?: Lang }) => {
 const Resume = () => {
   const { lang } = useLang();
   const containerRef = useScrollReveal({ fromY: 30, duration: 1, once: true, start: "top 85%" });
-  const nameRef = useScrollReveal({ fromY: 40, duration: 1.1, once: true, start: "top 90%" });
 
   useEffect(() => {
     const triggers: any[] = [];
@@ -84,35 +83,30 @@ const Resume = () => {
   return (
     <>
       <Header useMotion={true} p={lang === "fr" ? "Résumé" : "Resume"} h2={lang === "fr" ? "CV." : "Resume."} />
-      <h1
-        ref={nameRef as any}
-        className="opacity-0 text-[48px] sm:text-[64px] font-black mt-2 mb-6"
-        style={{
-          background: "linear-gradient(90deg, #F518E1 0%, #9F00FE 100%)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          backgroundClip: "text",
-          display: "inline-block",
-        }}
-      >
-        KERROUMI fatima zohra
-      </h1>
       <div ref={containerRef as any} className="opacity-0">
-        <div className="resume-btns mb-6 flex gap-3">
+        <div className="resume-btns mb-8 flex flex-wrap gap-4">
           <a
             href={resume.pdf.fr}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-tertiary text-white px-4 py-2 rounded hover:opacity-90"
+            className="group relative flex items-center gap-2 overflow-hidden rounded-full px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-105"
+            style={{ background: "linear-gradient(90deg, #F518E1 0%, #9F00FE 100%)", boxShadow: "0 0 20px rgba(245,24,225,0.3)" }}
           >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
             Télécharger PDF (FR)
           </a>
           <a
             href={resume.pdf.en}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-tertiary text-white px-4 py-2 rounded hover:opacity-90"
+            className="group relative flex items-center gap-2 overflow-hidden rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-[#F518E1]/60"
+            style={{ background: "rgba(255,255,255,0.05)", boxShadow: "0 0 20px rgba(159,0,254,0.1)" }}
           >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
             Download PDF (EN)
           </a>
         </div>
