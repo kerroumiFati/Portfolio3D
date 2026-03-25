@@ -32,6 +32,7 @@ import {
   Vitrine,
   LGDistr,
   ERPNext,
+  EcommerceSite,
   threejs,
 } from "../assets";
 
@@ -330,6 +331,18 @@ const projects: TProject[] = [
     sourceCodeLink: "https://github.com/",
   },
   {
+    name: "E-Commerce",
+    description:
+      "Ready-to-wear online store designed to simplify the purchase journey — filterable catalog (category, popularity), smooth checkout (cart, promo codes, payment via Stripe) and a mobile-first responsive UI.",
+    tags: [
+      { name: "Next.js", color: "blue-text-gradient" },
+      { name: "Stripe", color: "green-text-gradient" },
+      { name: "Firebase", color: "pink-text-gradient" },
+    ],
+    image: EcommerceSite,
+    sourceCodeLink: "https://github.com/",
+  },
+  {
     name: "ERP ",
     description:
       "ERPNext (open-source) module implementation and customization, including Purchasing, Sales, HR,Logistics, and Hospitality,to support business operations.",
@@ -387,6 +400,18 @@ const projectsFr: TProject[] = [
       { name: "scss", color: "pink-text-gradient" },
     ],
     image: Vitrine,
+    sourceCodeLink: "https://github.com/",
+  },
+  {
+    name: "E-Commerce",
+    description:
+      "Boutique en ligne de prêt-à-porter avec catalogue filtrable (catégories, popularité), tunnel de commande fluide — panier, codes promo, paiement Stripe — et interface optimisée mobile/desktop.",
+    tags: [
+      { name: "Next.js", color: "blue-text-gradient" },
+      { name: "Stripe", color: "green-text-gradient" },
+      { name: "Firebase", color: "pink-text-gradient" },
+    ],
+    image: EcommerceSite,
     sourceCodeLink: "https://github.com/",
   },
   {

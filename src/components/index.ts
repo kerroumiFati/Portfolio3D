@@ -13,6 +13,8 @@ import Resume from "./sections/Resume";
 import Experience from "./sections/Experience";
 import Works from "./sections/Works";
 import Feedbacks from "./sections/Feedbacks";
+import WorkProcess from "./sections/WorkProcess";
+import GitHub from "./sections/GitHub";
 import Contact from "./sections/Contact";
 import CanvasLoader from "./layout/Loader";
 
@@ -25,6 +27,8 @@ export {
   Experience,
   Works,
   Feedbacks,
+  WorkProcess,
+  GitHub,
   Contact,
   CanvasLoader,
   EarthCanvas,

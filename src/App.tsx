@@ -8,6 +8,8 @@ import {
   Contact,
   Experience,
   Feedbacks,
+  WorkProcess,
+  GitHub,
   Hero,
   Navbar,
   Tech,
@@ -44,6 +46,7 @@ const App = () => {
             <Resume />
             <Experience />
             <Tech />
+            <WorkProcess />
             <div
               className="relative"
               style={{
@@ -59,6 +62,7 @@ const App = () => {
               </div>
             </div>
             <Feedbacks />
+            <GitHub />
             <div className="relative z-0">
               <Contact />
               <StarsCanvas />

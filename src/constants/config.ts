@@ -44,6 +44,7 @@ type TConfig = {
       sections: {
         about: Required<TSection>;
         experience: TSection;
+        feedbacks: TSection;
         works: Required<TSection>;
         contact: TSection & {
           form: {
@@ -76,6 +77,10 @@ export const config: TConfig = {
         experience: {
           p: "Ce que j'ai fait jusqu'à présent",
           h2: "Expérience professionnelle.",
+        },
+        feedbacks: {
+          p: "Ce que disent les autres",
+          h2: "Témoignages.",
         },
         works: {
           p: "Mes projets",
