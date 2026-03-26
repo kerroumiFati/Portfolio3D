@@ -186,11 +186,11 @@ export const experiencesEn: TExperience[] = [
 
 export const experiencesFr: TExperience[] = [
   {
-    title: "Développeur React.js",
-    companyName: "Starbucks",
+    title: "Développeuse logiciel & web ",
+    companyName: "Freelance / Projets personnels",
     icon: starbucks,
     iconBg: "#26474E",
-    date: "Mars 2020 - Avril 2021",
+    date: "2020 -  Aujourd’hui",
     points: [
       "Développer et maintenir des applications web en utilisant React.js et d'autres technologies associées.",
       "Collaborer avec des équipes pluridisciplinaires (designers, Product Managers, développeurs) pour créer des produits de haute qualité.",
@@ -199,42 +199,45 @@ export const experiencesFr: TExperience[] = [
     ],
   },
   {
-    title: "Développeur React Native",
-    companyName: "Tesla",
+    title: "Développeuse Mobile",
+    companyName: "",
     icon: tesla,
     iconBg: "#77021D",
-    date: "Jan 2021 - Fév 2022",
+    date: "2021 - 2025",
     points: [
-      "Développer et maintenir des applications web en utilisant React.js et d'autres technologies associées.",
-      "Collaborer avec des équipes pluridisciplinaires (designers, Product Managers, développeurs) pour créer des produits de haute qualité.",
-      "Mettre en œuvre des designs responsives et assurer la compatibilité inter-navigateurs.",
-      "Participer aux revues de code et fournir des retours constructifs aux autres développeurs.",
+      "Développement d’applications mobiles cross‑platform avec React Native,et d'autres technologies associées  ",
+      "Incluant géolocalisation (GPS), notifications push, impression de reçus, scan de codes‑barres/QR et ",
+      "parcours d’achat en ligne complet (produits, panier, paiement)"
     ],
   },
   {
-    title: "Développeur Web",
-    companyName: "Shopify",
+    title: "Développeuse ERP",
+    companyName: "",
     icon: shopify,
     iconBg: "#26474E",
-    date: "Jan 2022 - Jan 2023",
+    date: "2023 – Aujourd’hui",
     points: [
-      "Développer et maintenir des applications web en utilisant React.js et d'autres technologies associées.",
-      "Collaborer avec des équipes pluridisciplinaires (designers, Product Managers, développeurs) pour créer des produits de haute qualité.",
-      "Mettre en œuvre des designs responsives et assurer la compatibilité inter-navigateurs.",
-      "Participer aux revues de code et fournir des retours constructifs aux autres développeurs.",
+      "Personnalisation d’ERPNext pour la gestion RH et paie : adaptation des doctypes, formulaires et rapports selon les besoins d’entreprises industrielles en Algérie",
+      "Développement de modules de gestion de stock et suivi des mouvements (entrées/sorties, inventaires, alertes) intégrés à des tableaux de bord clairs pour les responsables.",
+       "Conception d’un ERP personnalisé aligné sur les processus métier spécifiques, avec des fonctionnalités de gestion de stock, facturation, et suivi des livraisons.",
+      " Mise en place de l’import automatique de données via fichiers Excel pour alimenter produits, mouvements et données  ",
+      "Génération de documents PDF (factures, bons de commande, états récapitulatifs) directement depuis le système.",
+      "Implémentation de la traçabilité complète des opérations (historique des actions, journaux de modifications, suivi des statuts).",
+      "Configuration de notifications internes et de suivis par e‑mail pour les validations, retards, alertes de stock et échéances."
+
     ],
   },
   {
     title: "Développeur Full Stack",
-    companyName: "Meta",
+    companyName: "",
     icon: meta,
     iconBg: "#77021D",
     date: "Jan 2023 - Présent",
     points: [
-      "Développer et maintenir des applications web en utilisant React.js et d'autres technologies associées.",
-      "Collaborer avec des équipes pluridisciplinaires (designers, Product Managers, développeurs) pour créer des produits de haute qualité.",
-      "Mettre en œuvre des designs responsives et assurer la compatibilité inter-navigateurs.",
-      "Participer aux revues de code et fournir des retours constructifs aux autres développeurs.",
+      "Conception et développement d’applications web complètes avec Django, React.js et PostgreSQL, incluant des fonctionnalités de gestion de contenu, authentification, et tableaux de bord interactifs.",
+      "Mise en place d’interfaces modernes et responsive",
+      "Intégration de fonctionnalités avancées : Gestion des utilisateurs et rôles ,Génération de factures ,Notifications et suivi en temps réel",
+      "Développement d’applications desktop",
     ],
   },
 ];
@@ -299,6 +302,9 @@ const projects: TProject[] = [
       },
       {
         name: "restapi",
+        color: "green-text-gradient",
+      },{
+        name: "PostgreSQL",
         color: "green-text-gradient",
       },
       {
@@ -372,7 +378,7 @@ const projectsFr: TProject[] = [
       "Logiciel de gestion de stock, distribution, utilisateurs, scan de codes-barres, ventes, achats, commandes, suivi GPS, notifications, facturation et suivi des livraisons.",
     tags: [
       { name: "react", color: "blue-text-gradient" },
-      { name: "mongodb", color: "green-text-gradient" },
+      { name: "PostgreSQL", color: "green-text-gradient" },
       { name: "tailwind", color: "pink-text-gradient" },
     ],
     image: LGDistr,
@@ -384,7 +390,12 @@ const projectsFr: TProject[] = [
       "Développement d'un logiciel de pesage et de gestion de laboratoire pour poulets et légumes, incluant la gestion des stocks et le suivi des livraisons.",
     tags: [
       { name: "react", color: "blue-text-gradient" },
+      
       { name: "restapi", color: "green-text-gradient" },
+      {
+        name: "PostgreSQL",
+        color: "green-text-gradient",
+      },
       { name: "scss", color: "pink-text-gradient" },
     ],
     image: FoodLab,

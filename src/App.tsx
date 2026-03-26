@@ -7,7 +7,6 @@ import {
   About,
   Contact,
   Experience,
-  Feedbacks,
   WorkProcess,
   GitHub,
   Hero,
@@ -61,7 +60,6 @@ const App = () => {
                 <Works />
               </div>
             </div>
-            <Feedbacks />
             <GitHub />
             <div className="relative z-0">
               <Contact />

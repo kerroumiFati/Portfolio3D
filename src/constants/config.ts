@@ -72,7 +72,7 @@ export const config: TConfig = {
           p: "Introduction",
           h2: "Aperçu.",
           content:
-            "Développeuse Full Stack avec expérience en TypeScript/JavaScript et expertise React, Next.js,Node.js et Express.js.Je collabore avec les clients pour créer des solutions efficaces et ergonomiques.",
+            "Développeuse Full Stack avec expérience en TypeScript/JavaScript et expertise React, Next.js, Electron,Django,Frappe ,Node.js et Express.js.Je collabore avec les clients pour créer des solutions efficaces et ergonomiques.",
         },
         experience: {
           p: "Ce que j'ai fait jusqu'à présent",
