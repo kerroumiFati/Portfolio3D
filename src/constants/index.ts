@@ -428,4 +428,31 @@ const projectsFr: TProject[] = [
   },
 ];
 
-export { services, technologies, testimonials, projects, projectsFr };
+const testimonialsFr: TTestimonial[] = [
+  {
+    testimonial:
+      "Je pensais qu'il était impossible de créer un site aussi beau que notre produit, mais Rick m'a prouvé le contraire.",
+    name: "Sara Lee",
+    designation: "DAF",
+    company: "Acme Co",
+    image: "https://randomuser.me/api/portraits/women/4.jpg",
+  },
+  {
+    testimonial:
+      "Je n'ai jamais rencontré un développeur web qui se soucie autant du succès de ses clients que Rick.",
+    name: "Chris Brown",
+    designation: "COO",
+    company: "DEF Corp",
+    image: "https://randomuser.me/api/portraits/men/5.jpg",
+  },
+  {
+    testimonial:
+      "Après que Rick a optimisé notre site, notre trafic a augmenté de 50 %. Nous ne pouvons pas assez le remercier !",
+    name: "Lisa Wang",
+    designation: "CTO",
+    company: "456 Enterprises",
+    image: "https://randomuser.me/api/portraits/women/6.jpg",
+  },
+];
+
+export { services, technologies, testimonials, testimonialsFr, projects, projectsFr };

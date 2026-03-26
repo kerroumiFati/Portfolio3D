@@ -2,19 +2,20 @@ import { motion } from "framer-motion";
 
 import { styles } from "../../constants/styles";
 import { fadeIn } from "../../utils/motion";
-import { testimonials } from "../../constants";
+import { testimonials, testimonialsFr } from "../../constants";
 import { Header } from "../atoms/Header";
 import { TTestimonial } from "../../types";
 import { config } from "../../constants/config";
 import { useLang } from "../../context/lang";
 
-const FeedbackCard: React.FC<{ index: number } & TTestimonial> = ({
+const FeedbackCard: React.FC<{ index: number; lang: string } & TTestimonial> = ({
   index,
   testimonial,
   name,
   designation,
   company,
   image,
+  lang,
 }) => (
   <motion.div
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
@@ -31,7 +32,7 @@ const FeedbackCard: React.FC<{ index: number } & TTestimonial> = ({
             <span className="titre-degrade">@</span> {name}
           </p>
           <p className="text-secondary mt-1 text-[12px]">
-            {designation} of {company}
+            {designation} {lang === "fr" ? "de" : "of"} {company}
           </p>
         </div>
 
@@ -61,8 +62,8 @@ const Feedbacks = () => {
       <div
         className={`${styles.paddingX} -mt-20 flex flex-wrap gap-7 pb-14 max-sm:justify-center`}
       >
-        {testimonials.map((testimonial, index) => (
-          <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
+        {(lang === "fr" ? testimonialsFr : testimonials).map((testimonial, index) => (
+          <FeedbackCard key={testimonial.name} index={index} lang={lang} {...testimonial} />
         ))}
       </div>
     </div>
